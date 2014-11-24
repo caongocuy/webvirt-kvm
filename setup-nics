@@ -1,0 +1,37 @@
+### Khai bao cho interface
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+###
+# EM1
+auto em1
+iface em1 inet manual
+
+# BR1
+auto br1
+iface br1 inet static
+address 172.16.69.152
+netmask 255.255.255.0
+gateway 172.16.69.1
+dns-nameservers 8.8.8.8
+bridge_ports em1
+bridge_stp off   
+
+# EM2
+auto em2
+iface em2 inet manual
+
+# BR2
+auto br2
+iface br2 inet static
+address 10.145.37.248
+netmask 255.255.255.0
+bridge_ports em2
+bridge_stp off  
+
+
+
+
