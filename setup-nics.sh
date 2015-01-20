@@ -1,3 +1,9 @@
+#!/bin/bash 
+
+echo "##### SAO LUU FILE CAU HINH CARD MANG #####"
+mv /etc/network/interfaces /etc/network/interfaces.bka
+
+cat << EOF > /etc/network/interfaces
 ### Khai bao cho interface
 
 # The loopback network interface
@@ -13,7 +19,7 @@ iface em1 inet manual
 # BR1
 auto br1
 iface br1 inet static
-address 172.16.69.152
+address 172.16.69.4
 netmask 255.255.255.0
 gateway 172.16.69.1
 dns-nameservers 8.8.8.8
@@ -27,10 +33,16 @@ iface em2 inet manual
 # BR2
 auto br2
 iface br2 inet static
-address 10.145.37.248
-netmask 255.255.255.0
+address 123.30.178.194
+netmask 255.255.255.224
 bridge_ports em2
 bridge_stp off  
+
+EOF 
+
+sleep 5
+echo "##### KHOI DONG LAI MAY #####" 
+init 6
 
 
 
