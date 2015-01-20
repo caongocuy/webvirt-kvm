@@ -3,7 +3,7 @@
 echo "##### SAO LUU FILE CAU HINH CARD MANG #####"
 mv /etc/network/interfaces /etc/network/interfaces.bka
 
-cat << EOF > /etc/network/interfaces
+echo  << EOF >>  /etc/network/interfaces
 ### Khai bao cho interface
 
 # The loopback network interface
@@ -38,12 +38,8 @@ netmask 255.255.255.224
 bridge_ports em2
 bridge_stp off  
 
-EOF 
+EOF
 
 sleep 5
 echo "##### KHOI DONG LAI MAY #####" 
 init 6
-
-
-
-
